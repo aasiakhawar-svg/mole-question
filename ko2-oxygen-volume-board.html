@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Solve It: Volume of Oxygen from KO₂</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5fb;--card:#fff;--ink:#1b2440;--mut:#5b6785;--line:#d9dfee;--m:#e8731c;--n:#12a38f;--p:#7b4fc9;--v:#d9367a;--ok:#1f8a4c;--bad:#c9381c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1426;--card:#18203a;--ink:#e8ecfa;--mut:#a3afd0;--line:#2c3760;--m:#ff9a4d;--n:#3fd9c2;--p:#b394f5;--v:#ff74ab;--ok:#58dc8f;--bad:#ff8466}}
+:root[data-theme="dark"]{--bg:#0f1426;--card:#18203a;--ink:#e8ecfa;--mut:#a3afd0;--line:#2c3760;--m:#ff9a4d;--n:#3fd9c2;--p:#b394f5;--v:#ff74ab;--ok:#58dc8f;--bad:#ff8466}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 15px/1.6 Lexend,system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:0 14px 44px}
+h1{font-size:clamp(23px,5vw,32px);line-height:1.15;margin:26px 0 6px}
+.sub{color:var(--mut);margin:0 0 14px}
+.q{background:var(--card);border:2px solid var(--line);border-left:8px solid var(--m);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.eq{font-weight:700;font-size:16px;text-align:center;margin:8px 0;overflow-wrap:anywhere}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{border-radius:20px;padding:3px 12px;font-size:13px;font-weight:600;color:#fff}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line)}
+.dots{display:flex;gap:6px}.dot{flex:1;height:8px;border-radius:4px;background:var(--line)}.dot.on{background:var(--ok)}
+.flow{width:100%;height:auto;display:block;margin:6px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:14px 0;display:none;--a:var(--m)}
+.card.show{display:block}
+.card h2{margin:0 0 6px;font-size:19px;display:flex;gap:10px;align-items:center}
+.num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--a);color:#fff;display:grid;place-items:center;font-size:15px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+input{width:120px;font:600 16px Lexend,system-ui;padding:7px 9px;border:2px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink)}
+button{font:600 14px Lexend,system-ui;border:2px solid var(--a);color:var(--a);background:transparent;border-radius:9px;padding:7px 13px;cursor:pointer}
+button.f{background:var(--a);color:#fff}
+button:focus-visible,input:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+.opt.sel{background:var(--a);color:#fff}
+.msg{margin-top:10px;padding:9px 12px;border-radius:10px;font-weight:600;display:none}
+.msg.ok{display:block;background:color-mix(in srgb,var(--ok) 14%,transparent);border:1px solid var(--ok);color:var(--ink)}
+.msg.no{display:block;background:color-mix(in srgb,var(--bad) 12%,transparent);border:1px solid var(--bad);color:var(--ink)}
+.work{display:none;margin-top:8px;padding:9px 12px;border-radius:10px;border:1px dashed var(--a);font-size:14px}.work.show{display:block}
+.tri{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.tri svg{width:190px;flex:none}.tri .t{flex:1;min-width:200px}
+.tri polygon{cursor:pointer;stroke:var(--card);stroke-width:3;transition:opacity .2s}.tri polygon:hover{opacity:.8}
+.fx{font-size:20px;font-weight:700;color:var(--a)}
+.hint{font-size:13.5px;color:var(--mut)}
+.mist{border-left:6px solid var(--bad);background:color-mix(in srgb,var(--bad) 8%,transparent);border-radius:10px;padding:10px 14px;font-size:14px;margin-top:12px}
+footer{margin-top:26px;padding-top:12px;border-top:1px solid var(--line);color:var(--mut);font-size:13px}footer b{color:var(--ink)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body><div class="wrap">
+<h1>Solve It: Volume of Oxygen from KO₂</h1>
+<p class="sub">A 3-mark calculation in 3 moves: <b>triangle → ratio → triangle</b>. Try each step yourself, then check.</p>
+<div class="q"><b>Question 2 (a).</b> Potassium superoxide, KO₂, reacts with carbon dioxide to make potassium carbonate and oxygen.
+<div class="eq">4KO₂(s) + 2CO₂(g) → 2K₂CO₃(s) + 3O₂(g)</div>
+A sample of <b>13.0 g</b> of potassium superoxide reacts with <b>excess</b> carbon dioxide. Calculate the volume of oxygen, measured at <b>r.t.p.</b>, that is formed. Give your answer to <b>three significant figures</b>. [3]
+<div class="chips" style="margin-top:8px"><span class="chip" style="background:var(--m)">given: 13.0 g KO₂</span><span class="chip" style="background:var(--n)">Ar: K = 39, O = 16</span><span class="chip" style="background:var(--p)">r.t.p.: 24 dm³ per mole</span><span class="chip" style="background:var(--v)">find: V of O₂</span></div></div>
+<div class="bar"><div class="dots" id="dots"></div><div class="hint" id="pt" style="margin-top:4px"></div></div>
+<svg class="flow" viewBox="0 0 700 120" role="img" aria-label="Plan: mass of KO2 to moles of KO2 to moles of O2 to volume of O2">
+<defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="#8a94b4"/></marker></defs>
+<g font-family="Lexend,system-ui" font-weight="700" text-anchor="middle" fill="#fff">
+<rect x="6" y="8" width="144" height="62" rx="12" fill="#e8731c"/><text x="78" y="34" font-size="13">mass KO₂</text><text x="78" y="55" font-size="15">13.0 g</text>
+<rect x="190" y="8" width="144" height="62" rx="12" fill="#12a38f"/><text x="262" y="34" font-size="13">moles KO₂</text><text x="262" y="55" font-size="15">n = ?</text>
+<rect x="366" y="8" width="144" height="62" rx="12" fill="#7b4fc9"/><text x="438" y="34" font-size="13">moles O₂</text><text x="438" y="55" font-size="15">n = ?</text>
+<rect x="550" y="8" width="144" height="62" rx="12" fill="#d9367a"/><text x="622" y="34" font-size="13">volume O₂</text><text x="622" y="55" font-size="15">V = ?</text></g>
+<g stroke="#8a94b4" stroke-width="3" marker-end="url(#ah)"><line x1="152" y1="39" x2="186" y2="39"/><line x1="336" y1="39" x2="362" y2="39"/><line x1="512" y1="39" x2="546" y2="39"/></g>
+<g font-family="Lexend,system-ui" font-size="11.5" font-weight="600" text-anchor="middle" fill="#8a94b4"><text x="170" y="92">① mole</text><text x="170" y="106">triangle</text><text x="350" y="92">② equation</text><text x="350" y="106">ratio 4 : 3</text><text x="530" y="92">③ gas</text><text x="530" y="106">triangle</text></g></svg>
+<div id="steps"></div>
+<footer><b>Prepared by Aasia Khawar</b><br>© 2026 Aasia Khawar. All rights reserved. For my students’ learning; please don’t copy, share or sell.</footer>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const TRI={mole:{t:['m','mass (g)','--m'],l:['n','moles (mol)','--n'],r:['Mr','molar mass (g/mol)','--p']},gas:{t:['V','volume (dm³)','--v'],l:['n','moles (mol)','--n'],r:['24','molar volume (dm³/mol)','--p']}};
+function triHTML(id,k){const T=TRI[k];
+ const poly=(pts,c,tx,ty,key)=>`<polygon data-k="${key}" points="${pts}" fill="var(${c})"/><text data-t="${key}" x="${tx}" y="${ty}" text-anchor="middle" font-size="22" font-weight="700" fill="#fff" pointer-events="none">${T[key][0]}</text>`;
+ return `<div class="tri"><svg id="${id}" viewBox="0 0 200 160" role="img" aria-label="triangle with ${T.t[0]} on top, ${T.l[0]} and ${T.r[0]} below">${poly('100,8 145,78 55,78',T.t[2],100,60,'t')}${poly('55,78 100,78 100,152 8,152',T.l[2],58,126,'l')}${poly('100,78 145,78 192,152 100,152',T.r[2],142,126,'r')}</svg>
+ <div class="t"><div class="hint">Click a corner to <b>cover</b> it:</div><div class="fx" id="${id}f">pick a corner</div><div class="hint" id="${id}d"></div></div></div>`}
+function wireTri(id,k,start){const T=TRI[k],svg=document.getElementById(id);
+ const F={t:()=>`${T.t[0]} = ${T.l[0]} × ${T.r[0]}`,l:()=>`${T.l[0]} = ${T.t[0]} ÷ ${T.r[0]}`,r:()=>`${T.r[0]} = ${T.t[0]} ÷ ${T.l[0]}`};
+ const pick=key=>{svg.querySelectorAll('polygon').forEach(p=>{const c=p.dataset.k==key;p.style.opacity=c?.35:1});svg.querySelectorAll('text').forEach(t=>t.textContent=t.dataset.t==key?'?':T[t.dataset.t][0]);
+  document.getElementById(id+'f').textContent=F[key]();document.getElementById(id+'d').textContent='Cover '+T[key][1]+' → what is left shows the rule: top = bottom × bottom, or top ÷ one bottom.'};
+ svg.querySelectorAll('polygon').forEach(p=>p.onclick=()=>pick(p.dataset.k));pick(start)}
+const S=[
+{c:'--m',h:'Plan: what are we using?',b:()=>`<p>CO₂ is in <b>excess</b>, so the KO₂ is used up first. The <b>mass of KO₂</b> is the only amount we know, so every calculation starts from KO₂. Which substance do we start with?</p><div class="row"><button class="opt" data-v="0">CO₂</button><button class="opt" data-v="1">KO₂</button><button class="opt" data-v="2">O₂</button></div>`,
+ ok:'Yes: KO₂ is the limiting reactant and the only one with a given mass. Follow the three arrows in the plan above.'},
+{c:'--n',h:'Step ① Find Mr of KO₂',b:()=>`<p>Add up the Ar values: K = 39 and O = 16. KO₂ has <b>one K</b> and <b>two O</b>.</p><div class="row">Mr = <input id="i1" inputmode="decimal" aria-label="Mr of KO2"> g/mol <button class="f" data-chk="1">Check</button><button data-hint="1">Hint</button></div>`,
+ hint:'Mr = 39 + (2 × 16).',ans:71,tol:.01,good:'Mr = 39 + (2 × 16) = 39 + 32 = <b>71</b>',w:'39 + 32 = 71'},
+{c:'--n',h:'Step ② Moles of KO₂: use the mole triangle',b:()=>`${triHTML('tri1','mole')}<p class="hint">We know the mass and the Mr, so cover <b>n</b>.</p><div class="row"><button data-cover="tri1:l" class="f">Cover n for me</button></div><div class="row">n(KO₂) = <input id="i2" inputmode="decimal" aria-label="moles of KO2"> mol <button class="f" data-chk="2">Check</button><button data-hint="2">Hint</button></div>`,
+ hint:'n = m ÷ Mr = 13.0 ÷ 71. Keep the full calculator value.',ans:.1831,tol:.001,good:'n = m ÷ Mr = 13.0 ÷ 71 = <b>0.1831 mol</b> (keep all digits on your calculator)',w:'13.0 ÷ 71 = 0.18310…'},
+{c:'--p',h:'Step ③ Use the equation ratio',b:()=>`<svg viewBox="0 0 640 150" class="flow" role="img" aria-label="4 KO2 give 3 O2"><g font-family="Lexend,system-ui" font-weight="700" text-anchor="middle"><text x="130" y="18" font-size="13" fill="var(--m)">4 KO₂</text>${[0,1,2,3].map(i=>`<circle cx="${70+i*38}" cy="55" r="15" fill="var(--m)"/>`).join('')}<text x="320" y="62" font-size="26" fill="var(--mut)">→</text><text x="500" y="18" font-size="13" fill="var(--v)">3 O₂</text>${[0,1,2].map(i=>`<circle cx="${440+i*38}" cy="55" r="15" fill="var(--v)"/>`).join('')}<text x="130" y="105" font-size="13" fill="var(--mut)">÷ 4 → 1 KO₂</text><text x="500" y="105" font-size="13" fill="var(--mut)">× 3 → ¾ O₂ per KO₂</text><text x="320" y="135" font-size="14" fill="var(--p)">moles O₂ = moles KO₂ × ³⁄₄</text></g></svg>
+ <p>The equation says <b>4 mol KO₂ → 3 mol O₂</b>. To go from KO₂ to O₂ we multiply by:</p><div class="row"><button class="opt" data-v="0">4⁄3</button><button class="opt" data-v="1">3⁄4</button><button class="opt" data-v="2">2⁄4</button></div><div class="row">n(O₂) = <input id="i3" inputmode="decimal" aria-label="moles of O2"> mol <button class="f" data-chk="3">Check</button><button data-hint="3">Hint</button></div>`,
+ opt:1,optmsg:'Right: O₂ is 3 parts for every 4 parts of KO₂, so × ¾.',hint:'n(O₂) = 0.1831 × 3 ÷ 4.',ans:.1373,tol:.001,good:'n(O₂) = 0.1831 × ¾ = <b>0.1373 mol</b>',w:'0.18310 × 3 ÷ 4 = 0.13732…'},
+{c:'--v',h:'Step ④ Volume: use the gas triangle',b:()=>`${triHTML('tri2','gas')}<p class="hint">At r.t.p. one mole of any gas occupies <b>24 dm³</b>. Cover <b>V</b>.</p><div class="row"><button data-cover="tri2:t" class="f">Cover V for me</button></div><div class="row">V(O₂) = <input id="i4" inputmode="decimal" aria-label="volume of O2"> dm³ <button class="f" data-chk="4">Check</button><button data-hint="4">Hint</button></div>`,
+ hint:'V = n × 24 = 0.1373 × 24, then round to 3 s.f.',ans:3.30,tol:.0051,good:'V = n × 24 = 0.13732 × 24 = 3.2958 → <b>3.30 dm³</b> (3 s.f.)',w:'0.13732 × 24 = 3.2958…',final:true}];
+let cur=0;const steps=$('#steps');
+S.forEach((s,i)=>{const d=document.createElement('section');d.className='card';d.id='s'+i;d.style.setProperty('--a',`var(${s.c})`);
+ d.innerHTML=`<h2><span class="num">${i}</span>${s.h}</h2>${s.b()}<div class="msg" id="m${i}" aria-live="polite"></div><div class="work" id="w${i}"></div>`;steps.appendChild(d);
+ if(i==2)wireTri('tri1','mole','l');if(i==4)wireTri('tri2','gas','t')});
+const dots=$('#dots');S.forEach(()=>{const x=document.createElement('div');x.className='dot';dots.appendChild(x)});
+function upd(){[...dots.children].forEach((x,i)=>x.classList.toggle('on',i<cur));$('#pt').textContent=cur>=S.length?'All steps complete. Well done!':'Step '+cur+' of '+(S.length-1)}
+function show(i){document.getElementById('s'+i).classList.add('show')}
+function msg(i,t,ok){const e=$('#m'+i);e.className='msg '+(ok?'ok':'no');e.innerHTML=t}
+function pass(i){const s=S[i];cur=Math.max(cur,i+1);$('#w'+i).innerHTML='Working: '+(s.good||'');$('#w'+i).classList.add('show');if(i+1<S.length)show(i+1);else done();upd()}
+function done(){const d=document.createElement('section');d.className='card show';d.style.setProperty('--a','var(--ok)');
+ d.innerHTML=`<h2><span class="num">★</span>Full solution: 3 marks</h2><svg viewBox="0 0 700 120" class="flow" role="img" aria-label="Completed plan"><g font-family="Lexend,system-ui" font-weight="700" text-anchor="middle" fill="#fff"><rect x="6" y="8" width="144" height="62" rx="12" fill="#e8731c"/><text x="78" y="34" font-size="13">mass KO₂</text><text x="78" y="55" font-size="15">13.0 g</text><rect x="190" y="8" width="144" height="62" rx="12" fill="#12a38f"/><text x="262" y="34" font-size="13">n(KO₂)</text><text x="262" y="55" font-size="15">0.1831 mol</text><rect x="366" y="8" width="144" height="62" rx="12" fill="#7b4fc9"/><text x="438" y="34" font-size="13">n(O₂)</text><text x="438" y="55" font-size="15">0.1373 mol</text><rect x="550" y="8" width="144" height="62" rx="12" fill="#d9367a"/><text x="622" y="34" font-size="13">V(O₂)</text><text x="622" y="55" font-size="15">3.30 dm³</text></g><g fill="#8a94b4" font-size="22" font-family="Lexend,system-ui" text-anchor="middle"><text x="170" y="48">→</text><text x="350" y="48">→</text><text x="530" y="48">→</text></g><g font-family="Lexend,system-ui" font-size="11.5" font-weight="600" text-anchor="middle" fill="#8a94b4"><text x="170" y="92">13.0 ÷ 71</text><text x="350" y="92">× 3 ÷ 4</text><text x="530" y="92">× 24</text></g></svg>
+ <p><b>1 mark:</b> n(KO₂) = 13.0 ÷ 71 = 0.183 mol &nbsp; <b>1 mark:</b> n(O₂) = 0.183 × ¾ = 0.137 mol &nbsp; <b>1 mark:</b> V = 0.137 × 24 = <b>3.30 dm³</b></p>
+ <div class="mist"><b>Common mistakes:</b> skipping the ratio (0.183 × 24 = 4.39 dm³ ✗) · using × 2⁄4 or × 4⁄3 · using 22.4 instead of 24 dm³ at r.t.p. · rounding n too early (use the full calculator value, round only at the end) · forgetting the unit dm³ · writing 3.3 instead of <b>3.30</b> (3 s.f.).</div>
+ <div class="row"><button class="f" onclick="location.reload()">Try again</button></div>`;steps.appendChild(d)}
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+ const sec=b.closest('section');const i=sec?+sec.id.slice(1):-1;
+ if(b.classList.contains('opt')&&i>=0){const s=S[i];sec.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');
+  const ok=+b.dataset.v==(i==0?1:s.opt);
+  if(ok){msg(i,i==0?s.ok:s.optmsg,1);if(i==0)pass(0)}else msg(i,i==0?'Not quite: which substance has a given mass and is not in excess?':'Not quite: 4 KO₂ makes 3 O₂, so there are fewer O₂ than KO₂.',0)}
+ if(b.dataset.cover){const[id,k]=b.dataset.cover.split(':');document.querySelectorAll('#'+id+' polygon')[{t:0,l:1,r:2}[k]].dispatchEvent(new MouseEvent('click'))}
+ if(b.dataset.hint){const s=S[b.dataset.hint];msg(+b.dataset.hint,'Hint: '+s.hint,0)}
+ if(b.dataset.chk){const n=+b.dataset.chk,s=S[n],v=parseFloat(($('#i'+n).value||'').replace(',','.'));
+  if(isNaN(v))return msg(n,'Type a number first.',0);
+  if(Math.abs(v-s.ans)<=s.tol){
+   if(s.final&&Math.abs(v-3.30)<.0001&&!/^\s*3\.30\s*$/.test($('#i4').value.replace(',','.'))&&$('#i4').value.trim()!='3.3'){}
+   if(s.final&&$('#i4').value.trim()=='3.3')msg(n,'Right value! For <b>three</b> significant figures write <b>3.30</b>.',0);
+   else{msg(n,'Correct! ✓',1);pass(n)}}
+  else if(s.final&&Math.abs(v-3.29)<.006)msg(n,'Very close: with K = 39 (not 39.1) the answer rounds to <b>3.30</b>. Check your Ar value.',0);
+  else msg(n,'Not yet. Press Hint, or check your previous step.',0)}
+});
+show(0);upd();
+</script></body></html>
